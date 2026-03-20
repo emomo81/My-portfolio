@@ -1,4 +1,3 @@
-
 import Spline from '@splinetool/react-spline/next';
 import { Suspense } from "react";
 import HeroClient from "./HeroClient";
@@ -8,7 +7,9 @@ export default function Hero() {
     <section id="home" className="relative w-full h-screen overflow-hidden flex items-center bg-background">
       <div className="absolute inset-0 z-0">
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
-          <Spline scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode" />
+          <Spline 
+            scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode" 
+          />
         </Suspense>
       </div>
 
