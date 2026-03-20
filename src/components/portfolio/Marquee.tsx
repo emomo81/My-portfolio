@@ -6,7 +6,7 @@ const marqueeText = [
   "DATA SCIENCE",
   "WEB DEVELOPMENT",
   "MACHINE LEARNING",
-  "UI/UX DESIGN",
+  "DATA ANALYSIS",
   "PYTHON",
   "NEXT.JS",
   "STRATEGIC ANALYSIS",
