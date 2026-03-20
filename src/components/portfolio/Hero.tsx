@@ -1,11 +1,19 @@
 
-import Spline from '@splinetool/react-spline/next';
+"use client";
+
+import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 import HeroClient from "./HeroClient";
 
+// Use dynamic import for the client-side Spline component to ensure it only loads after hydration
+// and doesn't compete for resources with the Loader.
+const Spline = dynamic(() => import('@splinetool/react-spline'), {
+  ssr: false,
+});
+
 /**
  * Hero section component.
- * Uses Server-Side Spline integration for optimized performance and full cursor interactivity.
+ * Optimized for mobile by ensuring it mounts only after the Loader is finished.
  */
 export default function Hero() {
   return (
