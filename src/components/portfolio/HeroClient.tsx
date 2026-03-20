@@ -7,8 +7,8 @@ import { ArrowRight, Download } from "lucide-react";
 
 export default function HeroClient() {
   return (
-    <div className="max-w-7xl mx-auto px-6 w-full">
-      <div className="max-w-2xl pointer-events-auto">
+    <div className="max-w-7xl mx-auto px-6 w-full pointer-events-none">
+      <div className="max-w-2xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -25,12 +25,21 @@ export default function HeroClient() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
-            <Button size="lg" className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2 h-14 px-8 text-base shadow-lg shadow-primary/20" asChild>
+            <Button 
+              size="lg" 
+              className="rounded-full bg-primary hover:bg-primary/90 text-white gap-2 h-14 px-8 text-base shadow-lg shadow-primary/20 pointer-events-auto" 
+              asChild
+            >
               <a href="#projects">
                 View My Work <ArrowRight size={18} />
               </a>
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full border-white/10 hover:bg-white/5 text-white gap-2 h-14 px-8 text-base backdrop-blur-sm" asChild>
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="rounded-full border-white/10 hover:bg-white/5 text-white gap-2 h-14 px-8 text-base backdrop-blur-sm pointer-events-auto" 
+              asChild
+            >
               <a href="/resume.pdf" download>
                 Download CV <Download size={18} />
               </a>

@@ -46,19 +46,24 @@
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto] animate-gradient;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-primary bg-[length:200%_auto];
+    animation: gradient 8s linear infinite;
   }
 }
 
-/* Hide Spline Watermark Branding */
-a[href*="spline.design"],
+/* Aggressive Spline Watermark Removal */
 #spline-watermark,
 .spline-watermark,
-[class*="spline-watermark"] {
+[class*="spline-watermark"],
+a[href*="spline.design"],
+a[target="_blank"][style*="position: absolute"] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
   z-index: -9999 !important;
 }
 
@@ -89,4 +94,9 @@ a[href*="spline.design"],
 
 html {
   scroll-behavior: smooth;
+}
+
+@keyframes gradient {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
