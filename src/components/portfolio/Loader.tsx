@@ -5,12 +5,12 @@ import { useEffect, Suspense } from "react";
 import Spline from '@splinetool/react-spline';
 
 /**
- * Enhanced splash screen loader using a custom Spline scene.
- * Automatically transitions to the main content after a short duration.
+ * Enhanced splash screen loader using the specific Spline scene requested.
+ * Uses the client-side Spline component to manage lifecycle and event clean-up.
  */
 export default function Loader({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
-    // Display the splash scene for 4 seconds before entering the site
+    // Display the splash scene for 4.5 seconds before entering the site
     const timer = setTimeout(onComplete, 4500);
     return () => clearTimeout(timer);
   }, [onComplete]);

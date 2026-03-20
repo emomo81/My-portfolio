@@ -4,14 +4,14 @@ import HeroClient from "./HeroClient";
 
 /**
  * Hero section component.
- * Uses the Next.js optimized Spline component for the background 3D scene.
- * Structured to allow cursor interaction to pass through to the canvas.
+ * Uses the Next.js optimized Spline component (Server Component) for high performance.
+ * UI is layered using pointer-events-none to ensure cursor interaction reaches the 3D scene.
  */
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-background">
-      {/* 3D Scene Container - Positioned behind but interactive */}
-      <div className="absolute inset-0 z-0 pointer-events-auto">
+      {/* 3D Scene Container */}
+      <div className="absolute inset-0 z-0">
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
           <Spline 
             scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode" 
@@ -19,7 +19,7 @@ export default function Hero() {
         </Suspense>
       </div>
 
-      {/* Visual Overlays - Masked to allow clicks to pass through */}
+      {/* Visual Overlays */}
       <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background z-[1] pointer-events-none" />
 
       {/* Main Content - Interactive elements enabled, container transparent to events */}

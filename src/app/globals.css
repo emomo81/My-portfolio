@@ -57,7 +57,9 @@
 [class*="spline-watermark"],
 a[href*="spline.design"],
 a[target="_blank"][style*="position: absolute"],
-a[target="_blank"][style*="bottom: 0"] {
+a[target="_blank"][style*="bottom: 0"],
+[style*="position: absolute"][style*="bottom: 0px"][style*="right: 0px"],
+canvas + div {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;

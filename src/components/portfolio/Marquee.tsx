@@ -15,13 +15,13 @@ export default function Marquee() {
         <motion.div
           animate={{ x: [0, -1000] }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "linear",
           }}
           className="flex gap-12 items-center"
         >
-          {[...Array(8)].map((_, i) => (
+          {[...Array(6)].map((_, i) => (
             <div key={i} className="flex gap-12 items-center">
               {marqueeText.map((text, index) => (
                 <div key={index} className="flex items-center gap-12">
