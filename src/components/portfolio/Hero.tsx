@@ -2,6 +2,10 @@ import Spline from '@splinetool/react-spline/next';
 import { Suspense } from "react";
 import HeroClient from "./HeroClient";
 
+/**
+ * Hero section component.
+ * Uses the Next.js optimized Spline component for the background 3D scene.
+ */
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden flex items-center bg-background">
