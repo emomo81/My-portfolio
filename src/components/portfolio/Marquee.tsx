@@ -15,7 +15,7 @@ export default function Marquee() {
         <motion.div
           animate={{ x: [0, -1000] }}
           transition={{
-            duration: 15,
+            duration: 20,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -25,7 +25,7 @@ export default function Marquee() {
             <div key={i} className="flex gap-12 items-center">
               {marqueeText.map((text, index) => (
                 <div key={index} className="flex items-center gap-12">
-                  <span className="text-4xl md:text-6xl font-headline font-black text-transparent stroke-white/20 select-none tracking-tighter" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}>
+                  <span className="text-4xl md:text-6xl font-headline font-black text-transparent select-none tracking-tighter" style={{ WebkitTextStroke: '1px rgba(255,255,255,0.1)' }}>
                     {text}
                   </span>
                   <div className="w-3 h-3 rounded-full bg-primary" />
