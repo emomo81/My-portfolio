@@ -56,7 +56,8 @@
 .spline-watermark,
 [class*="spline-watermark"],
 a[href*="spline.design"],
-a[target="_blank"][style*="position: absolute"] {
+a[target="_blank"][style*="position: absolute"],
+a[target="_blank"][style*="bottom: 0"] {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
