@@ -5,18 +5,13 @@ import HeroClient from "./HeroClient";
 
 /**
  * Hero section component.
- * Uses Server-Side Spline integration.
- * Includes a robust CSS fallback to ensure visibility on mobile devices that might struggle with WebGL.
+ * Uses Server-Side Spline integration for optimized performance and full cursor interactivity.
  */
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-background">
-      {/* 3D Scene Container with CSS Fallback */}
+      {/* 3D Scene Container */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[#0a0a0f]" />
-        {/* Subtle animated background gradient as fallback for mobile/failed WebGL */}
-        <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_50%_50%,#3b82f6_0%,transparent_50%)] animate-pulse" />
-        
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
           <Spline 
             scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode" 

@@ -2,7 +2,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState, Suspense } from "react";
+import { useEffect, Suspense } from "react";
 import dynamic from 'next/dynamic';
 
 // Dynamic import for the client-side Spline component
@@ -11,14 +11,11 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
 });
 
 /**
- * Enhanced splash screen loader.
- * Optimized for mobile: Uses a lighter animation if 3D initialization is risky.
+ * Splash screen loader featuring the requested Spline scene.
+ * Displays personalized branding in the bottom-right corner.
  */
 export default function Loader({ onComplete }: { onComplete: () => void }) {
-  const [isMobile, setIsMobile] = useState(false);
-
   useEffect(() => {
-    setIsMobile(window.innerWidth < 768);
     // Display the splash scene for 4.5 seconds
     const timer = setTimeout(onComplete, 4500);
     return () => clearTimeout(timer);
@@ -32,25 +29,11 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
       className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0a0a0f] overflow-hidden"
     >
       <div className="w-full h-full relative">
-        {/* Only attempt 3D on non-mobile or high-power desktop to prevent mobile crash */}
-        {!isMobile ? (
-          <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
-            <Spline 
-              scene="https://prod.spline.design/vzBa42kPkMlxtJ8G/scene.splinecode" 
-            />
-          </Suspense>
-        ) : (
-          <div className="w-full h-full flex items-center justify-center bg-background">
-             <motion.div 
-               animate={{ 
-                 scale: [1, 1.2, 1],
-                 opacity: [0.3, 0.6, 0.3]
-               }}
-               transition={{ duration: 3, repeat: Infinity }}
-               className="w-64 h-64 rounded-full bg-primary/20 blur-3xl"
-             />
-          </div>
-        )}
+        <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
+          <Spline 
+            scene="https://prod.spline.design/vzBa42kPkMlxtJ8G/scene.splinecode" 
+          />
+        </Suspense>
         
         {/* Branding - Bottom Right corner */}
         <div className="absolute inset-0 flex items-end justify-end p-8 md:p-16 pointer-events-none">
