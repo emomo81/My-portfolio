@@ -16,8 +16,8 @@ const Spline = dynamic(() => import('@splinetool/react-spline'), {
  */
 export default function Loader({ onComplete }: { onComplete: () => void }) {
   useEffect(() => {
-    // Display the splash scene for 4.5 seconds
-    const timer = setTimeout(onComplete, 4500);
+    // Increased duration to 12 seconds to ensure heavy Spline scenes load fully
+    const timer = setTimeout(onComplete, 12000);
     return () => clearTimeout(timer);
   }, [onComplete]);
 
