@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,8 +7,8 @@ import { ArrowRight, Download } from "lucide-react";
 
 export default function HeroClient() {
   return (
-    <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-      <div className="max-w-2xl">
+    <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pointer-events-none">
+      <div className="max-w-2xl pointer-events-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

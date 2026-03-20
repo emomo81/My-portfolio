@@ -5,6 +5,7 @@ import HeroClient from "./HeroClient";
 /**
  * Hero section component.
  * Uses the Next.js optimized Spline component for the background 3D scene.
+ * This is a Server Component to support the async Spline component.
  */
 export default function Hero() {
   return (
@@ -17,7 +18,7 @@ export default function Hero() {
         </Suspense>
       </div>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/50 via-transparent to-background z-[1] pointer-events-none" />
 
       <HeroClient />
 

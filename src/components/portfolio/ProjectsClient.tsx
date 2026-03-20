@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,8 +7,8 @@ import Image from "next/image";
 
 export default function ProjectsClient() {
   return (
-    <div className="max-w-7xl mx-auto relative z-10">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+    <div className="max-w-7xl mx-auto relative z-10 pointer-events-none">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pointer-events-auto">
         <div>
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
@@ -47,7 +46,7 @@ export default function ProjectsClient() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-50px" }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="group glass-card flex flex-col h-full hover:border-primary/20 transition-all duration-500 overflow-hidden"
+            className="group glass-card flex flex-col h-full hover:border-primary/20 transition-all duration-500 overflow-hidden pointer-events-auto"
           >
             <div className="relative aspect-video overflow-hidden">
               <Image
