@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "student-mgmt",
+      "description": "Student Management System",
+      "imageUrl": "https://picsum.photos/seed/student-mgmt/800/600",
+      "imageHint": "software application"
+    },
+    {
+      "id": "medical-insurance",
+      "description": "Medical Insurance Management",
+      "imageUrl": "https://picsum.photos/seed/medical/800/600",
+      "imageHint": "medical technology"
+    },
+    {
+      "id": "car-insurance",
+      "description": "Car Insurance System",
+      "imageUrl": "https://picsum.photos/seed/car-ins/800/600",
+      "imageHint": "automotive dashboard"
+    },
+    {
+      "id": "bank-enquiry",
+      "description": "Bank Customer Enquiry App",
+      "imageUrl": "https://picsum.photos/seed/bank/800/600",
+      "imageHint": "finance app"
+    },
+    {
+      "id": "r-analysis",
+      "description": "Statistical Analysis in R",
+      "imageUrl": "https://picsum.photos/seed/r-stats/800/600",
+      "imageHint": "data charts"
+    },
+    {
+      "id": "database-project",
+      "description": "Database Management System",
+      "imageUrl": "https://picsum.photos/seed/db/800/600",
+      "imageHint": "database server"
+    }
+  ]
 }
