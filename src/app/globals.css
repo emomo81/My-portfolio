@@ -50,6 +50,18 @@
   }
 }
 
+/* Hide Spline Watermark Branding */
+a[href*="spline.design"],
+#spline-watermark,
+.spline-watermark,
+[class*="spline-watermark"] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  z-index: -9999 !important;
+}
+
 .noise-overlay {
   position: fixed;
   top: 0;
