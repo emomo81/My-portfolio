@@ -5,12 +5,7 @@ import { motion } from "framer-motion";
 const marqueeText = [
   "DATA SCIENCE",
   "WEB DEVELOPMENT",
-  "MACHINE LEARNING",
   "DATA ANALYSIS",
-  "PYTHON",
-  "NEXT.JS",
-  "STRATEGIC ANALYSIS",
-  "CREATIVE SOLUTIONS",
 ];
 
 export default function Marquee() {
@@ -20,13 +15,13 @@ export default function Marquee() {
         <motion.div
           animate={{ x: [0, -1000] }}
           transition={{
-            duration: 20,
+            duration: 15,
             repeat: Infinity,
             ease: "linear",
           }}
           className="flex gap-12 items-center"
         >
-          {[...Array(4)].map((_, i) => (
+          {[...Array(8)].map((_, i) => (
             <div key={i} className="flex gap-12 items-center">
               {marqueeText.map((text, index) => (
                 <div key={index} className="flex items-center gap-12">
@@ -41,7 +36,6 @@ export default function Marquee() {
         </motion.div>
       </div>
       
-      {/* Absolute positioning to cover potential branding areas if needed */}
       <div className="absolute inset-x-0 bottom-0 h-4 bg-gradient-to-t from-background to-transparent pointer-events-none" />
     </div>
   );
