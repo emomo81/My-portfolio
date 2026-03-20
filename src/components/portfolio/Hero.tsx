@@ -1,7 +1,7 @@
 
 "use client";
 
-import Spline from '@splinetool/react-spline/next';
+import Spline from '@splinetool/react-spline';
 import { motion } from "framer-motion";
 import { personalInfo } from "@/data/portfolio";
 import { Button } from "@/components/ui/button";

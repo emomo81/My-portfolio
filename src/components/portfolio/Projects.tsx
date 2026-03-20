@@ -6,7 +6,7 @@ import { projects } from "@/data/portfolio";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
 import { Suspense } from "react";
-import Spline from '@splinetool/react-spline/next';
+import Spline from '@splinetool/react-spline';
 
 export default function Projects() {
   return (
