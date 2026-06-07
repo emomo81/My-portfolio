@@ -5,7 +5,7 @@ import { Suspense } from "react";
 import dynamic from "next/dynamic";
 import HeroClient from "./HeroClient";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
+const SplineScene = dynamic(() => import("./SplineScene"), { ssr: false });
 
 /**
  * Hero section component.
@@ -17,8 +17,8 @@ export default function Hero() {
       {/* 3D Scene Container */}
       <div className="absolute inset-0 z-0">
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
-          <Spline 
-            scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode" 
+          <SplineScene
+            scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode"
           />
         </Suspense>
       </div>
