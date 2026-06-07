@@ -1,14 +1,9 @@
 
 "use client";
 
-import dynamic from 'next/dynamic';
 import { useInView } from "framer-motion";
 import { useRef, Suspense } from "react";
-
-// Use dynamic import for the client-side Spline component to enable lazy loading
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-});
+import Spline from "@splinetool/react-spline";
 
 /**
  * Projects section background component.
