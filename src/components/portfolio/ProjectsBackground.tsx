@@ -3,7 +3,9 @@
 
 import { useInView } from "framer-motion";
 import { useRef, Suspense } from "react";
-import Spline from "@splinetool/react-spline";
+import dynamic from "next/dynamic";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
 
 /**
  * Projects section background component.
