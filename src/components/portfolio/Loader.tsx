@@ -3,12 +3,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, Suspense } from "react";
-import dynamic from 'next/dynamic';
-
-// Dynamic import for the client-side Spline component
-const Spline = dynamic(() => import('@splinetool/react-spline'), {
-  ssr: false,
-});
+import Spline from "@splinetool/react-spline";
 
 /**
  * Splash screen loader featuring the requested Spline scene.
