@@ -58,12 +58,20 @@
 .spline-watermark,
 [class*="spline-watermark"],
 a[href*="spline.design"],
+a[href*="spline"],
 a[target="_blank"][style*="position: absolute"],
 a[target="_blank"][style*="bottom: 0"],
 [style*="position: absolute"][style*="bottom: 0px"][style*="right: 0px"],
 canvas + div,
 div[style*="position: absolute"] > a[href*="spline.design"],
-div[style*="position: absolute"] > a[target="_blank"] {
+div[style*="position: absolute"] > a[target="_blank"],
+/* Additional Spline branding selectors */
+svg[style*="position: absolute"],
+img[alt*="spline"],
+img[alt*="Spline"],
+/* Target the "Built with Spline" container */
+a > svg,
+a > img {
   display: none !important;
   opacity: 0 !important;
   visibility: hidden !important;
