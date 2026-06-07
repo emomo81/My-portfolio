@@ -14,9 +14,9 @@ const SplineScene = dynamic(() => import("./SplineScene"), { ssr: false });
 export default function Hero() {
   return (
     <section id="home" className="relative w-full h-screen overflow-hidden bg-background">
-      {/* 3D Scene Container */}
-      <div className="absolute inset-0 z-0">
-        <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
+      {/* 3D Scene Container — SplineScene self-skips on mobile, fallback gradient always visible */}
+      <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(59,130,246,0.15),transparent)]">
+        <Suspense fallback={null}>
           <SplineScene
             scene="https://prod.spline.design/5QT65szjxPzPxi-K/scene.splinecode"
           />
