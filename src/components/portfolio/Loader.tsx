@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { useEffect, useRef, Suspense } from "react";
 import dynamic from "next/dynamic";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
+const SplineScene = dynamic(() => import("./SplineScene"), { ssr: false });
 
 export default function Loader({ onComplete }: { onComplete: () => void }) {
   const fallbackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -33,7 +33,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
     >
       <div className="w-full h-full relative">
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
-          <Spline
+          <SplineScene
             scene="https://prod.spline.design/vzBa42kPkMlxtJ8G/scene.splinecode"
             onLoad={handleLoad}
           />
