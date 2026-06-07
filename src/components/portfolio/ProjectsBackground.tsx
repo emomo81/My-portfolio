@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef, Suspense } from "react";
 import dynamic from "next/dynamic";
 
-const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
+const SplineScene = dynamic(() => import("./SplineScene"), { ssr: false });
 
 /**
  * Projects section background component.
@@ -19,8 +19,8 @@ export default function ProjectsBackground() {
     <div ref={ref} className="absolute top-0 left-0 w-full h-[600px] opacity-30 z-0 pointer-events-none">
       {isInView && (
         <Suspense fallback={<div className="w-full h-full bg-background animate-pulse" />}>
-          <Spline 
-            scene="https://prod.spline.design/TMQq1r9Hw5iBrZSf/scene.splinecode" 
+          <SplineScene
+            scene="https://prod.spline.design/TMQq1r9Hw5iBrZSf/scene.splinecode"
           />
         </Suspense>
       )}
