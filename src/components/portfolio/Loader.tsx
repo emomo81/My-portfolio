@@ -2,19 +2,27 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, Suspense } from "react";
-import Spline from "@splinetool/react-spline";
+import { useEffect, useRef, Suspense } from "react";
+import dynamic from "next/dynamic";
 
-/**
- * Splash screen loader featuring the requested Spline scene.
- * Displays personalized branding in the bottom-right corner.
- */
+const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
+
 export default function Loader({ onComplete }: { onComplete: () => void }) {
+  const fallbackTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
   useEffect(() => {
-    // Increased duration to 12 seconds to ensure heavy Spline scenes load fully
-    const timer = setTimeout(onComplete, 12000);
-    return () => clearTimeout(timer);
+    // Hard cap: dismiss after 8s even if onLoad never fires (slow connection)
+    fallbackTimer.current = setTimeout(onComplete, 8000);
+    return () => {
+      if (fallbackTimer.current) clearTimeout(fallbackTimer.current);
+    };
   }, [onComplete]);
+
+  function handleLoad() {
+    if (fallbackTimer.current) clearTimeout(fallbackTimer.current);
+    // Short delay so the scene has a moment to render before fading out
+    setTimeout(onComplete, 800);
+  }
 
   return (
     <motion.div
@@ -25,8 +33,9 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
     >
       <div className="w-full h-full relative">
         <Suspense fallback={<div className="w-full h-full bg-[#0a0a0f] animate-pulse" />}>
-          <Spline 
-            scene="https://prod.spline.design/vzBa42kPkMlxtJ8G/scene.splinecode" 
+          <Spline
+            scene="https://prod.spline.design/vzBa42kPkMlxtJ8G/scene.splinecode"
+            onLoad={handleLoad}
           />
         </Suspense>
         
