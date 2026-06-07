@@ -2,8 +2,10 @@
 "use client";
 
 import { Suspense } from "react";
+import dynamic from "next/dynamic";
 import HeroClient from "./HeroClient";
-import Spline from "@splinetool/react-spline";
+
+const Spline = dynamic(() => import("@splinetool/react-spline"), { ssr: false });
 
 /**
  * Hero section component.
